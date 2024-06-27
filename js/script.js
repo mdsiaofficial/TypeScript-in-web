@@ -94,6 +94,7 @@ const userDetails = (id, user) => {
 };
 const uDetails = (user) => {
     console.log(`Hello ${user.name}, ${user.age > 40 ? "sir" : "mr "}`);
+    return user.id;
 };
 const user1 = {
     id: 1,
@@ -101,3 +102,46 @@ const user1 = {
     age: 24
 };
 console.log(uDetails(user1));
+// function signature
+let customFunc;
+let addFunc;
+addFunc = (v, u) => {
+    return v + u;
+};
+let calc;
+calc = (a, b, z) => {
+    if (z === '+') {
+        return a + b;
+    }
+    else {
+        return 0;
+    }
+};
+console.log(calc(3, 6, '+'));
+let ud;
+ud = (id, user) => {
+    console.log(`Hello ${user.name}`);
+};
+console.log(ud(34, { name: "ashi", age: 23 }));
+// in class / object
+class Player {
+    constructor(n, a, c) {
+        this.name = n;
+        this.age = a;
+        this.country = c;
+    }
+    play() {
+        console.log(`${this.name} from ${this.country} and ${this.age}`);
+    }
+}
+const ash = new Player("Ashiq", 24, "bd");
+const rtygf = new Player("Ashiq", 24, "bd");
+const dsf = new Player("Ashiq", 24, "bd");
+console.log(ash.play());
+const players = [];
+// we can declare a array of our class - player
+const AllPlayers = [];
+AllPlayers.push(ash);
+AllPlayers.push(rtygf);
+AllPlayers.push(dsf);
+console.log(AllPlayers);
