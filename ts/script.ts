@@ -206,8 +206,8 @@ console.log(ud(34, {name: "ashi", age: 23}));
 
 class Player{
   name: string;
-  age: number;
-  country: string;
+  private age: number;
+  readonly country: string;
 
   constructor(n: string, a: number, c: string) {
     this.name = n;
@@ -233,3 +233,27 @@ AllPlayers.push(ash);
 AllPlayers.push(rtygf);
 AllPlayers.push(dsf);
 console.log(AllPlayers)
+console.log(ash.name);
+
+ash.name = "newAshiq";
+console.log(ash.name);
+
+
+ash.age = 43;
+console.log(ash.age);
+
+ash.country = "aus";
+console.log(ash.country);
+
+class stu {
+  constructor(
+    public name: string,
+    public id: strOrNum,
+    private result: string,
+    private age: number,
+    readonly address: string,
+  ) {}
+  book() {
+    console.log(`${this.name} got id-${this.id}, lives in ${this.address}`);
+  }
+}
