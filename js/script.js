@@ -159,3 +159,51 @@ function drawRect(opt) {
     let length = opt.length;
 }
 drawRect({ width: 20, length: 49 });
+drawRect({ width: 20, length: 50, height: 60 });
+let threeDim = { width: 20, length: 50, height: 60 };
+drawRect(threeDim);
+// generic
+// const addID = <T extends object> (obj: T) => {
+//   let ID = Math.floor(Math.random() * 100);
+//   return ({...obj, ID});
+// }
+const addID = (obj) => {
+    let ID = Math.floor(Math.random() * 100);
+    return (Object.assign(Object.assign({}, obj), { ID }));
+};
+let us = addID({
+    name: "ashiq",
+    age: 30,
+    country: "BD",
+});
+console.log(us.ID);
+us.name = "as2";
+console.log(us.name);
+let ui = "newUI";
+const res1 = {
+    status: "ok",
+    type: "user",
+    data: { name: "ashiq", age: 34 },
+};
+console.log(res1);
+const res2 = {
+    status: "ok",
+    type: "user",
+    data: { name: "ashiq", age: 34 },
+};
+console.log(res2);
+// ENUMS
+var ResType;
+(function (ResType) {
+    ResType[ResType["SUCCESS"] = 0] = "SUCCESS";
+    ResType[ResType["FAILED"] = 1] = "FAILED";
+    ResType[ResType["UNAUTHENTICATED"] = 2] = "UNAUTHENTICATED";
+    ResType[ResType["FORBIDDEN"] = 3] = "FORBIDDEN";
+})(ResType || (ResType = {}));
+;
+const res3 = {
+    status: "ok",
+    type: ResType.SUCCESS,
+    data: { name: "ashiq", age: 34 },
+};
+console.log(res3);

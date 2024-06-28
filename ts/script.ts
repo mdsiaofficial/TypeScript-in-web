@@ -264,3 +264,91 @@ function drawRect(
 }
 
 drawRect({ width: 20, length: 49 });
+
+drawRect({ width: 20, length: 50, height: 60 });
+
+let threeDim = { width: 20, length: 50, height: 60 };
+drawRect(threeDim);
+
+import Play from '../js/classes/Player.js';
+import { IsPlayer } from '../js/interface/isPlayer.js';
+
+// generic
+// const addID = <T extends object> (obj: T) => {
+//   let ID = Math.floor(Math.random() * 100);
+//   return ({...obj, ID});
+// }
+
+const addID = <T extends {
+  name: string;
+  age: number;
+}> (obj: T) => {
+  let ID = Math.floor(Math.random() * 100);
+  return ({...obj, ID});
+}
+
+let us = addID({
+  name: "ashiq",
+  age: 30,
+  country: "BD",
+});
+
+console.log(us.ID);
+us.name = "as2";
+console.log(us.name);
+
+let ui = "newUI";
+
+// addID(ui);
+
+// generic interface
+interface APIResponse {
+  status: string;
+  type: string;
+  data: {
+    name: string;
+    age: number;
+  }
+}
+
+const res1: APIResponse = {
+  status: "ok",
+  type: "user",
+  data: {name: "ashiq", age: 34},
+}
+
+console.log(res1);
+
+interface APIResponse2 <T> {
+  status: string;
+  type: string;
+  data: T;
+}
+
+const res2: APIResponse2 <object> = {
+  status: "ok",
+  type: "user",
+  data: {name: "ashiq", age: 34},
+}
+
+console.log(res2);
+
+
+
+// ENUMS
+
+enum ResType { SUCCESS, FAILED, UNAUTHENTICATED, FORBIDDEN };
+
+interface apiType<T> {
+  status: string;
+  type: ResType;
+  data: T;
+}
+
+const res3: apiType<object> = {
+  status: "ok",
+  type: ResType.SUCCESS,
+  data: {name: "ashiq", age: 34},
+}
+
+console.log(res3)
