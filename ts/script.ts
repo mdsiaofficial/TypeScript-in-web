@@ -19,7 +19,7 @@ fvck = 56;
 
 console.log(fvck)
 
-function gunkoro (a:number, b:number): number {
+function gunkoro(a: number, b: number): number {
   return a * b;
 }
 
@@ -31,7 +31,7 @@ let fru = ['apel', 'kola', 'jambura', 'lebu', 45, true];
 fru.push(53);
 console.log(fru);
 
-let mixed = ['kola', 120, true, ];
+let mixed = ['kola', 120, true,];
 mixed.push('nashpati', 'kathal', 400);
 console.log(mixed);
 mixed.push({
@@ -118,7 +118,7 @@ const myFuc = (a: string, b: number) => {
 myFuc("hello", 56);
 
 const hidfuc = (a: string, b: string, c?: number){
-  c? console.log(c): null;
+  c ? console.log(c) : null;
 
   console.log(a + b);
   return a + b + c;
@@ -127,7 +127,7 @@ const hidfuc = (a: string, b: string, c?: number){
 hidfuc("helo", "hi", 67);
 hidfuc("helo", "hi");
 
-function ff(a: string, b: string): number{
+function ff(a: string, b: string): number {
 
 
   return 5;
@@ -199,12 +199,12 @@ ud = (id: strOrNum, user: { name: string, age: number }) => {
   console.log(`Hello ${user.name}`);
 }
 
-console.log(ud(34, {name: "ashi", age: 23}));
+console.log(ud(34, { name: "ashi", age: 23 }));
 
 
 // in class / object
 
-class Player{
+class Player {
   name: string;
   private age: number;
   readonly country: string;
@@ -245,15 +245,22 @@ console.log(ash.age);
 ash.country = "aus";
 console.log(ash.country);
 
-class stu {
-  constructor(
-    public name: string,
-    public id: strOrNum,
-    private result: string,
-    private age: number,
-    readonly address: string,
-  ) {}
-  book() {
-    console.log(`${this.name} got id-${this.id}, lives in ${this.address}`);
-  }
+import { stu } from "./classes/Stu.js";
+
+const ashiqstu = new stu("ashiq", 34, "a+", 24, "Rajashon");
+console.log(ashiqstu);
+
+// interface
+
+interface RectOpt {
+  width: number;
+  length: number;
 }
+function drawRect(
+  opt: RectOpt
+) {
+  let width = opt.width;
+  let length = opt.length;
+}
+
+drawRect({ width: 20, length: 49 });

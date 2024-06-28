@@ -1,4 +1,3 @@
-"use strict";
 console.log("Hi, Hello");
 const name = "Ashiq";
 console.log(name);
@@ -152,15 +151,11 @@ ash.age = 43;
 console.log(ash.age);
 ash.country = "aus";
 console.log(ash.country);
-class stu {
-    constructor(name, id, result, age, address) {
-        this.name = name;
-        this.id = id;
-        this.result = result;
-        this.age = age;
-        this.address = address;
-    }
-    book() {
-        console.log(`${this.name} got id-${this.id}, lives in ${this.address}`);
-    }
+import { stu } from "./classes/Stu.js";
+const ashiqstu = new stu("ashiq", 34, "a+", 24, "Rajashon");
+console.log(ashiqstu);
+function drawRect(opt) {
+    let width = opt.width;
+    let length = opt.length;
 }
+drawRect({ width: 20, length: 49 });
