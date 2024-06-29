@@ -352,3 +352,10 @@ const res3: apiType<object> = {
 }
 
 console.log(res3)
+
+let height = 180;
+function x() {
+  let height = 200;
+  height = height + 1;
+  console.log(height);
+}
